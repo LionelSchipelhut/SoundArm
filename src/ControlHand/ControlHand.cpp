@@ -36,16 +36,16 @@ ControlHand::ControlHand () {}
         thumb_o.attach(THUMB);
         thumb_o.write(T_OPEN_DEGREE);
 
-        index_o.attach(THUMB);
+        index_o.attach(INDEX);
         index_o.write(I_OPEN_DEGREE);
 
-        middle_o.attach(THUMB);
+        middle_o.attach(MIDDLE);
         middle_o.write(M_OPEN_DEGREE);
 
-        ring_o.attach(THUMB);
+        ring_o.attach(RING);
         ring_o.write(R_OPEN_DEGREE);
 
-        pinky_o.attach(THUMB);
+        pinky_o.attach(PINKY);
         pinky_o.write(P_OPEN_DEGREE);
     }
     void ControlHand::toggleHand (uint8_t state) {

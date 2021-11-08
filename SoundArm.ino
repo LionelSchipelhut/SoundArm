@@ -1,7 +1,6 @@
-#include <Arduino.h>
 #include "src/VoiceRecognition/ManageRecognition.h"
 
-#define TWO_FINGERS true
+#define TWO_FINGERS false
 #include "src/ControlHand/ControlHand.h"
 
 #define TRAIN_BTN   2
@@ -56,13 +55,19 @@ void setup () {
         currentState = TRAIN;
     }
     
+
+    pinMode(13, INPUT_PULLUP);
     //train();
 }
 
 void loop () {
 
-    currentFunction[currentState]();
-    //recognize();
+    int var = digitalRead(13);
+
+    //currentFunction[currentState]();
+    Serial.println(var);
+    control.toggleHand(var);
+    
 }
 
 void trainISR () {
@@ -73,6 +78,8 @@ void trainISR () {
 void train () {
     Serial.println("Trainer");
     handRec.trainHand();
+
+    currentState = RECOGNIZE;
 }
 
 

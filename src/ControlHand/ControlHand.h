@@ -10,7 +10,7 @@
 #endif
 
 #ifndef TWO_FINGERS
-    #define TWO_FINGERS true
+    #define TWO_FINGERS false
 #endif
 
 #ifndef OPEN
@@ -25,8 +25,8 @@
     #define THUMB   5
     #define FINGERS 6   
 
-    #define OPEN_DEGREE     0
-    #define CLOSE_DEGREE    90
+    #define OPEN_DEGREE    5
+    #define CLOSE_DEGREE    45
 
     static Servo thumb_o, fingers_o;
 #else
@@ -37,20 +37,20 @@
     #define PINKY   11
 
     //Grado de apertura para el pulgar.
-    #define T_OPEN_DEGREE     0
-    #define T_CLOSE_DEGREE    90
+    #define T_OPEN_DEGREE     100
+    #define T_CLOSE_DEGREE    0
     //Grado de apertura para el dedo índice.
-    #define I_OPEN_DEGREE     0
-    #define I_CLOSE_DEGREE    90
+    #define I_OPEN_DEGREE     150
+    #define I_CLOSE_DEGREE    45
     //Grado de apertura para el dedo del medio.
-    #define M_OPEN_DEGREE     0
-    #define M_CLOSE_DEGREE    90
+    #define M_OPEN_DEGREE     150
+    #define M_CLOSE_DEGREE    45
     //Grado de apertura para el dedo anular.
-    #define R_OPEN_DEGREE     0
-    #define R_CLOSE_DEGREE    90
+    #define R_OPEN_DEGREE     10
+    #define R_CLOSE_DEGREE    45
     //Grado de apertura para el dedo meñique.
-    #define P_OPEN_DEGREE     0
-    #define P_CLOSE_DEGREE    90
+    #define P_OPEN_DEGREE     120
+    #define P_CLOSE_DEGREE    15
 
     static Servo thumb_o, index_o, 
             middle_o, ring_o, 
