@@ -1,6 +1,5 @@
 #include "ControlHand.h"
 
-
 ControlHand::ControlHand () {}
 
 #if (TWO_FINGERS == true)
@@ -47,6 +46,12 @@ ControlHand::ControlHand () {}
 
         pinky_o.attach(PINKY);
         pinky_o.write(P_OPEN_DEGREE);
+
+        delay(500);
+        this->toggleHand(1);
+
+        delay(500);
+        this->toggleHand(0);
     }
     void ControlHand::toggleHand (uint8_t state) {
         digitalWrite(ERROR_LIGHT, LOW);
@@ -68,6 +73,7 @@ ControlHand::ControlHand () {}
                 ring_o.write(R_CLOSE_DEGREE);
                 pinky_o.write(P_CLOSE_DEGREE);
                 break;
+                
             default:
                 digitalWrite(ERROR_LIGHT, HIGH);
             }

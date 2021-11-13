@@ -53,8 +53,8 @@
     #define P_CLOSE_DEGREE    15
 
     static Servo thumb_o, index_o, 
-            middle_o, ring_o, 
-            pinky_o;
+                middle_o, ring_o, 
+                pinky_o;
 #endif
 
 class ControlHand{

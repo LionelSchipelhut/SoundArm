@@ -1,11 +1,9 @@
 #include "ManageRecognition.h"
 
-
 ManageRecognition::ManageRecognition (uint8_t RX, uint8_t TX)
 : VR(RX, TX) {
 
 }
-
 
 bool ManageRecognition::trainHand () {
     int recv;
@@ -21,7 +19,6 @@ bool ManageRecognition::trainHand () {
     Serial.println(this->buff[2], HEX);
 
     return true;
-
 }
 
 bool ManageRecognition::loadCommands () {
