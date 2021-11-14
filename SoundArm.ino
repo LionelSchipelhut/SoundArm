@@ -20,7 +20,7 @@ state_function_t currentFunction[2] = {
 };
 
 void setup () {
-    Serial.begin(9600);
+    Serial.begin(115200);
     while(!Serial);
 
     Serial.println("Serial started.");
@@ -42,11 +42,11 @@ void setup () {
 
     control.begin();
 
-    attachInterrupt(
+    /*attachInterrupt(
         digitalPinToInterrupt(TRAIN_BTN),
         trainISR,
-        FALLING
-    );
+        RISING
+    );*/
 
     if (!handRec.loadCommands()){
         digitalWrite(ERROR_LIGHT, HIGH);
@@ -56,21 +56,22 @@ void setup () {
     }
     
 
-    pinMode(13, INPUT_PULLUP);
+    //pinMode(13, INPUT_PULLUP);
     //train();
 }
 
 void loop () {
 
-    int var = digitalRead(13);
+    //int var = digitalRead(13);
 
-    //currentFunction[currentState]();
-    Serial.println(var);
-    control.toggleHand(var);
+    currentFunction[currentState]();
+    //Serial.println(var);
+    //control.toggleHand(var);
     
 }
 
 void trainISR () {
+    Serial.println("ISR");
     currentState = TRAIN;
 }
 

@@ -22,14 +22,14 @@ bool ManageRecognition::trainHand () {
 }
 
 bool ManageRecognition::loadCommands () {
-    if(this->clear() == 0) Serial.println("Recognizer cleared.");
-    else return false;
+    if(this->clear() == 0) {Serial.println("Recognizer cleared.");}
+    else {return false;}
 
-    if (this->load((uint8_t)OPEN) >= 0) Serial.println("OPEN loaded.");
-    else return false;
+    if (this->load((uint8_t)OPEN) >= 0) {Serial.println("OPEN loaded.");}
+    else {return false;}
     
-    if (this->load((uint8_t)CLOSE) >= 0) Serial.println("CLOSE loaded.");
-    else return false;
+    if (this->load((uint8_t)CLOSE) >= 0) {Serial.println("CLOSE loaded.");}
+    else {return false;}
 
     return true;
 }
